@@ -1,0 +1,51 @@
+{
+  "name": "myproject",
+  "version": "0.0.1",
+  "description": "Awesome project developed with TypeORM.",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "@types/mocha": "^9.1.1",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^16.11.47",
+    "@types/sinon": "^10.0.13",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/body-parser": "^1.19.2",
+    "@types/express": "^4.17.13",
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^8.5.1",
+    "mocha": "^10.0.0",
+    "mocha-junit-reporter": "^2.0.2",
+    "mongoose": "^6.5.1",
+    "nodemailer": "^6.7.8",
+    "nodemon": "^2.0.19",
+    "openssl": "^2.0.0",
+    "random-key": "^0.3.2",
+    "reflect-metadata": "^0.1.13",
+    "sinon": "^14.0.0",
+    "stripe": "^10.7.0",
+    "uuid": "^8.3.2"
+  },
+  "scripts": {
+    "start": "npx tsc && nodemon src/index.ts",
+    "test": "mocha -require ts-node/register  'test/*.ts' --recursive  --timeout 60000 --exit"
+  },
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
+}

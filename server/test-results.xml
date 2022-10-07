@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.0310" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2022-09-23T10:12:05" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Test Api" timestamp="2022-09-23T10:12:05" tests="0" file="C:\Users\nivetha.k\Desktop\Nivetha Kumar\booking\backend\test\test.ts" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="GET/api/hotels" timestamp="2022-09-23T10:12:05" tests="1" file="C:\Users\nivetha.k\Desktop\Nivetha Kumar\booking\backend\test\test.ts" time="0.0290" failures="1">
+    <testcase name="Test Api GET/api/hotels it Should get all the tasks" time="0.0010" classname="it Should get all the tasks">
+      <failure message="app.address is not a function" type="TypeError"><![CDATA[TypeError: app.address is not a function
+    at serverAddress (node_modules\chai-http\lib\request.js:282:18)
+    at new Test (node_modules\chai-http\lib\request.js:271:53)
+    at Object.obj.<computed> [as get] (node_modules\chai-http\lib\request.js:239:14)
+    at Context.<anonymous> (test\test.ts:16:14)
+    at processImmediate (node:internal/timers:466:21)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
