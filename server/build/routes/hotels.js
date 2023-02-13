@@ -8,19 +8,19 @@ var verifyToken_1 = require("../utils/verifyToken");
 // ROUTING FOR HOTELS
 var router = express.Router();
 // create,
-router.post("/", verifyToken_1.verifyAdmin, crudhotel.createHotel);
+router.post("/", verifyToken_1.verifyAdmin, verifyToken_1.visiblehotel, crudhotel.createHotel);
 //  update
-router.put("/:id", verifyToken_1.verifyAdmin, crudhotel.updateHotel);
+router.put("/:id", verifyToken_1.verifyAdmin, verifyToken_1.visiblehotel, crudhotel.updateHotel);
 //  Delete 
-router["delete"]("/:id", verifyToken_1.verifyAdmin, crudhotel.deleteHotel);
+router["delete"]("/:id", verifyToken_1.verifyAdmin, verifyToken_1.visiblehotel, crudhotel.deleteHotel);
 // get by id
-router.get("/:id", crudhotel.gethotelbyid);
+router.get("/:id", verifyToken_1.visiblehotel, crudhotel.gethotelbyid);
 // get all  
-router.get("/", crudhotel.gethotel);
+router.get("/", verifyToken_1.visiblehotel, crudhotel.gethotel);
 // room/hotelid
-router.get("/room/:id", crudhotel.getHotelRooms);
+router.get("/room/:id", verifyToken_1.visiblehotel, crudhotel.getHotelRooms);
 // rating
-router.post("/rating/:id", crudhotel.setRating);
-router.get("/rating/:id", crudhotel.getRating);
+router.post("/rating/:id", verifyToken_1.visiblehotel, crudhotel.setRating);
+router.get("/rating/:id", verifyToken_1.visiblehotel, crudhotel.getRating);
 exports["default"] = router;
 //# sourceMappingURL=hotels.js.map

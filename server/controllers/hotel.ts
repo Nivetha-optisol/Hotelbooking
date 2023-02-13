@@ -41,7 +41,7 @@ export class hotel {
       const currentHotel: any = await Hotel.findById(req.params.id);
       console.log("del", currentHotel);
       currentHotel.rooms.forEach(async (e) => {
-        await Room.findByIdAndDelete(e);
+        await Room.findByIdAndDelete(e);                                                                                                                                                                                                                                                       
         // console.log("rooms",e)
       });
       await Hotel.findByIdAndDelete(req.params.id);
@@ -53,9 +53,13 @@ export class hotel {
   // getting a hotel by id
   gethotelbyid = async (req: Request, res: Response, next) => {
     try {
-      const hotel: String = await Hotel.findById(req.params.id);
+      
 
-      res.status(200).json(hotel);
+      const hotel: String = await Hotel.findById(req.params.id);
+   
+      
+        res.status(200).json(hotel);
+     
     } catch (err) {
       res.status(500).json(err);
     }

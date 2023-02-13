@@ -7,16 +7,16 @@ var verifyToken_1 = require("../utils/verifyToken");
 // ROUTING FOR ROOMS
 var router = express.Router();
 // create
-router.post("/:hotelid", verifyToken_1.verifyAdmin, Crudroom.createRoom);
+router.post("/:hotelid", verifyToken_1.verifyAdmin, verifyToken_1.visibleroom, Crudroom.createRoom);
 //  update
-router.put("/:id", verifyToken_1.verifyAdmin, Crudroom.updateRoom);
+router.put("/:id", verifyToken_1.verifyAdmin, verifyToken_1.visibleroom, Crudroom.updateRoom);
 //  Updating Availability room , unavailableid
-router.put("/availability/:id", Crudroom.updateRoomAvailability);
+router.put("/availability/:id", verifyToken_1.visibleroom, Crudroom.updateRoomAvailability);
 //  Delete 
-router["delete"]("/:id", verifyToken_1.verifyAdmin, Crudroom.deleteRoom);
+router["delete"]("/:id", verifyToken_1.verifyAdmin, verifyToken_1.visibleroom, Crudroom.deleteRoom);
 // get by id
-router.get("/:id", Crudroom.getroombyid);
+router.get("/:id", verifyToken_1.visibleroom, Crudroom.getroombyid);
 // get all  
-router.get("/", Crudroom.getroom);
+router.get("/", verifyToken_1.visibleroom, Crudroom.getroom);
 exports["default"] = router;
 //# sourceMappingURL=rooms.js.map

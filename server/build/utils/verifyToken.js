@@ -36,8 +36,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.verifyAdmin = exports.verifyUser = exports.verifyToken = void 0;
-var jwt = require('jsonwebtoken');
+exports.visibleuser = exports.visibleroom = exports.visiblepayment = exports.visiblehotel = exports.verifyAdmin = exports.verifyUser = exports.verifyToken = void 0;
+var jwt = require("jsonwebtoken");
 var User_1 = require("../models/User");
 var error_1 = require("../utils/error");
 var verifyToken = function (req, res, next) {
@@ -66,7 +66,7 @@ var verifyUser = function (req, res, next) { return __awaiter(void 0, void 0, vo
                         _id = JSON.parse(isadmin)._id;
                         console.log("admin", isadmin);
                         return [4 /*yield*/, User_1["default"].findById(_id)];
-                    case 1: return [4 /*yield*/, (_a.sent())];
+                    case 1: return [4 /*yield*/, _a.sent()];
                     case 2:
                         userdata = _a.sent();
                         console.log("userdata", userdata);
@@ -110,4 +110,88 @@ var verifyAdmin = function (req, res, next) { return __awaiter(void 0, void 0, v
     });
 }); };
 exports.verifyAdmin = verifyAdmin;
+var visiblehotel = function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
+    var isshow;
+    return __generator(this, function (_a) {
+        try {
+            isshow = process.env.IS_SHOW_HOTEL;
+            // console.log( req.headers);
+            console.log("query", isshow);
+            if (isshow == "true") {
+                next();
+            }
+            else {
+                res.status(404).json("404 Error");
+            }
+        }
+        catch (err) {
+            res.status(500).json(err);
+        }
+        return [2 /*return*/];
+    });
+}); };
+exports.visiblehotel = visiblehotel;
+var visiblepayment = function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
+    var isshow;
+    return __generator(this, function (_a) {
+        try {
+            isshow = process.env.IS_SHOW_PAYMENT;
+            // console.log( req.headers);
+            console.log("query", isshow);
+            if (isshow == "true") {
+                next();
+            }
+            else {
+                res.status(404).json("404 Error");
+            }
+        }
+        catch (err) {
+            res.status(500).json(err);
+        }
+        return [2 /*return*/];
+    });
+}); };
+exports.visiblepayment = visiblepayment;
+var visibleroom = function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
+    var isshow;
+    return __generator(this, function (_a) {
+        try {
+            isshow = process.env.IS_SHOW_ROOM;
+            // console.log( req.headers);
+            console.log("query", isshow);
+            if (isshow == "true") {
+                next();
+            }
+            else {
+                res.status(404).json("404 Error");
+            }
+        }
+        catch (err) {
+            res.status(500).json(err);
+        }
+        return [2 /*return*/];
+    });
+}); };
+exports.visibleroom = visibleroom;
+var visibleuser = function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
+    var isshow;
+    return __generator(this, function (_a) {
+        try {
+            isshow = process.env.IS_SHOW_USER;
+            // console.log( req.headers);
+            console.log("query", isshow);
+            if (isshow == "true") {
+                next();
+            }
+            else {
+                res.status(404).json("404 Error");
+            }
+        }
+        catch (err) {
+            res.status(500).json(err);
+        }
+        return [2 /*return*/];
+    });
+}); };
+exports.visibleuser = visibleuser;
 //# sourceMappingURL=verifyToken.js.map
